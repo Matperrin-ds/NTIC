@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="France Electricity Consumption Visualisation">
+    <meta name="author" content="Mathieu Perrin">
+    <title>Reinforcement Learning</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/business-frontpage.css" rel="stylesheet">
+    <link href="css/slider.css" rel="stylesheet" >
+</head>   
+    
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Tech Watch</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="visu1.html">Reinforcement Learning</a>
+                            <span class="sr-only">(current)</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="visu2.html">Hot topics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- First row -->
+    <div class="container">
+        <div class="col-md-15 mb-5">
+            <br>
+            <br>
+            <h2>Reinforcement Learning (RL)</h2>
+            <hr>
+            <br>
+            <br>
+            <p> 
+                <strong>Reinforcement learning is a sub-field of Machine Learning in which algorithms learn through experience.</strong> Just like living animals, they try several solutions in order to solve a problem. Sometimes they try and improve a strategy they already know works well, and sometimes they choose to explore new ways instead. This tradeoff is called <strong>"Exploitation"</strong> vs <strong>"Exploration"</strong>. 
+            </p>
+            <br>
+            <p>
+                In order so solve a problem with Reinforcement Learning algorithms, it has to be addressed correctly. Every RL problem is made of 2 parts : the <strong>environment</strong> where actions take place (e.g coliseum), and the <strong>agent</strong>, who takes those actions (e.g gladiator). 
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <center>
+                        <figure class="figure">
+                            <img src="images/colizeum.png" class="figure-img img-fluid rounded" height ="100" width = "150">
+                            <figcaption class="figure-caption">Coliseum</figcaption>
+                        </figure>
+                        </center>
+                    </div>
+                <div class="col-sm">
+                        <center>
+                        <figure class="figure">
+                            <img src="images/gladiator.jpg" class="figure-img img-fluid rounded" height ="100" width = "150">
+                            <figcaption class="figure-caption">Gladiator</figcaption>
+                        </figure>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p>
+                For example, say you want to teach a robotic arm how to play darts. <strong>The environment is the software simulating the target, some physical laws, and the mathematical model for the arm</strong>. It holds the informations about what happens to the dart when a certain command is given to the arm. The environment is also given a <strong>"Reward function"</strong> that rates a shot : the score gets greater the closer the dart is to the center of the target.
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <center>
+                        <figure class="figure">
+                            <img src="images/robotic.svg" class="figure-img img-fluid rounded" height ="100" width = "150">
+                            <figcaption class="figure-caption">Robotic Arm</figcaption>
+                        </figure>                            
+                        </center>
+                    </div>
+                <div class="col-sm">
+                        <center>
+                        <figure class="figure">
+                            <img src="images/dart.jpg" class="figure-img img-fluid rounded" height ="150" width = "150">
+                            <figcaption class="figure-caption">Target</figcaption>
+                        </figure> 
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p>
+                On the other hand, the <strong>agent</strong> (e.g the chip controlling the arm) has no knowledge of the environment and its physical laws. At each moment in time, it only knows the available actions and can observe the reward it gets from taking them. Its goal is to find the strategy, or more precisely the <strong>"policy"</strong> that maximizes the obtained reward.
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <center>
+                        <figure class="figure">
+                            <img src="images/chip.png" class="figure-img img-fluid rounded" height ="100" width = "150">
+                            <figcaption class="figure-caption">Electronic Chip</figcaption>
+                        </figure> 
+                        </center>
+                    </div>
+                <div class="col-sm">
+                        <center>
+                        <figure class="figure">
+                            <img src="images/action.png" class="figure-img img-fluid rounded" height ="100" width = "150">
+                            <figcaption class="figure-caption">Observed Rewards</figcaption>
+                        </figure> 
+                        </center>
+                    </div>
+                </div>
+            </div>            
+            <br>
+            <p>
+                Sometimes, single-agent Reinforcement Learning isn't enough to fully model <strong>cooperative behaviours</strong>. For example, when modelling crowds that walk through each other, <a href="http://mrl.snu.ac.kr/research/ProjectCrowdRL/crowdrl.pdf" target="_blank">researchers</a> are planning to use several agents to increase the realism of their simulations. Several examples show that in this case, <strong>Multi-Agent Reinforcement Learning (MARL)</strong> can provide interesting solutions. 
+            </p>
+            <center>
+            <figure class="figure">
+                <img src="images/crowds.png" class="figure-img img-fluid rounded" height ="300" width = "500">
+                <figcaption class="figure-caption">Simulated Crowds - <a href="http://mrl.snu.ac.kr/research/ProjectCrowdRL/crowdrl.pdf" target="_blank">source</a> </figcaption>
+            </figure>                 
+            </center>
+            <br>
+            <p>
+                The idea is simple : instead of having only one agent making decisions, there are several of them. Every time step each agent takes an action, then one gets a <strong>list of actions</strong> corresponding to the actions taken by each agent. Finally, the environment evolves from one state to another with respect to this list of actions, instead of a single one.
+            </p>
+
+        </div>
+    </div>
+    
+    
+    
+</body>

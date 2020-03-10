@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="France Electricity Consumption Visualisation">
+    <meta name="author" content="Mathieu Perrin">
+    <title>Hot Topics</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/business-frontpage.css" rel="stylesheet">
+    <link href="css/slider.css" rel="stylesheet" >
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Tech Watch</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="visu1.html">Reinforcement Learning</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="visu2.html">Hot topics</a>
+                            <span class="sr-only">(current)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- First row -->
+    <div class="container">
+        <div class="col-md-15 mb-5">
+            <br>
+            <br>
+            <h2>Hot topics</h2>
+            <hr>
+            <br>
+            <br>
+            <center>
+            <h4>OpenAI five : a MARL based bot that controls a Dota2 team</h4>
+            <p>
+                <a href="https://openai.com/blog/openai-five/" target="_blank">Official OpenAI Five blog</a>
+            </p>
+            <br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eHipy_j29Xw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </center>
+            <br>
+            <br>
+            <p>
+                If you are unfamiliar with Dota2, it is a Multiplayer Online Battle Arena game in which <strong>2 teams of 5 Heroes</strong> each have a base they must defend. The map is always the same, and a team wins when they destroy the enemy base. 
+            </p>
+            <br>
+            <center>
+                <figure class="figure">
+                    <img src="images/maplanes.png" class="figure-img img-fluid rounded" height ="380" width = "500">
+                    <figcaption class="figure-caption">The map from Dota2 with toplane, midlane and botlane</figcaption>
+                </figure>
+            </center>
+            <br>
+            <p>
+                There are 4 paths one can go : <strong>3 lanes and the jungle</strong> in between them. Small NPCs called <strong>minions</strong> automatically walk on the lanes toward the enemy base and fight enemy minions. Slaying an enemy minion or Hero grants gold, which is essential to buy items that make you stronger. In the jungle, there are neutral monsters that can be slain by both teams for gold. Usually one of the 5 players has the "jungler" role and tries to kill the most jungle monsters before secretly going on a lane to surprise an enemy in a 2 vs 1 fight.
+            </p>
+            <br>
+            <p>
+                The game implies very complex mechanics such as <strong>baiting</strong> enemies, <strong>teamfighting</strong>, and <strong>"pushing"</strong> lanes (killing enemy minions quickly to make progress towards the enemy base) or <strong>"freezing"</strong> them (trying to keep the minions in the same spot). To allow their AI model to grasp the complexity of these strategies, OpenAI have used <strong>Multi-Agent Reinforcement Learning</strong>.
+            </p>
+            <br>
+            <p>
+                Each <strong>Hero</strong> is controlled by an <strong>artificial neural network</strong> with <strong>1024</strong> Long Short Term Memory <strong>(LSTM)</strong> Cells. The model trains by using an algorithm called <strong>"Self Play"</strong> in which it <strong>plays against itself</strong> 80% of the time and against former versions of itself the other 20%. In order to bring out cooperative behaviours, some form of communication between the heroes is required. In spite of being unable to explicitly communicate, the <strong>artificial players are aware of the team's average reward function</strong>. Using a parameter called <strong>"team spirit"</strong> they can prioritize the team's reward instead of their own.
+            </p>
+            <br>
+            <p>
+                This architecture has given unprecedented results so far. It is able to beat above-average human teams while demonstrating excellent teamplay and using advanced <strong>human-like strategies</strong> such as sacrificing for an objective or abandoning a lane to control another.
+            </p>
+            <br>
+            <br>
+            <br>
+            <center>
+            <h4>OpenAI Multi-Agent Hide&Seek : using MARL to create a cooperative Hide&Seek game</h4>
+              <p>
+                <a href="https://openai.com/blog/emergent-tool-use/" target="_blank">Official OpenAI H&S blog</a>
+            </p>
+            <br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kopoLzvh5jY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </center>
+            <br>
+            <br>
+            <p>
+                Another very interesting model from OpenAI, in which they turned the Hide&Seek game into a team game. One team of <strong>seekers</strong> tries to find the team of <strong>hiders</strong>. When they are <strong>all hidden</strong>, the hiders receive a positive reward, otherwise they get a negative one. As for the seekers, it is the contrary, if at least 1 hider is seen they earn a positive reward, otherwise they receive a negative one.
+            </p>
+            <br>
+            <p>
+                To make the game more strategic, <strong>moveable blocks</strong> and <strong>permanent walls</strong> have been added. Allowing for a <strong>shelter building mechanic</strong> : The hiders try to make shelters out of the blocks and the seekers try to use ramps or stairs to access them. After millions of training episodes on powerful computing units, the AI has become expert at using blocks to its advantage. 
+            </p>
+            <br>
+            <p>
+                As shown in the video, the hiders develop <strong>different ways of winning</strong>, from building simple shelters to blocking the seekers to locking all the blocks before the game starts. It is amusing to see how <strong>the agents learn the environment's weaknesses and bugs to exploit them</strong>. For example, seekers discover they can throw themselves into the air when they run with a block against a wall. As for the hiders, the learn that they can make blocks disappear by pushing them with the right angle in an edge of the arena.
+            </p>
+            <br>
+            <br>
+            <br>
+            <center>
+            <h4>Johann Lussange et al. : Stock market simulation using MARL</h4>
+            <p>
+                <a href="https://arxiv.org/abs/1909.07748" target="_blank">arXiv article</a>
+            </p>
+            <br>
+            <img src="images/stocks.jpg" height ="300" width = "561">
+             </center>
+            <br>
+            <br>
+            <p>
+                In terms of stock market simulation, past research has mostly used <a href="https://en.wikipedia.org/wiki/Autoregressive_model" target="_blank">autoregressive models</a> and Multi Agent Systems with <a href="https://en.wikipedia.org/wiki/Zero-intelligence_trader" target="_blank">zero-intelligence agents</a> and has failed to produce realistic enough simulations of stock market dynamics.
+            </p>
+            <br>
+            <p>
+                 In their paper, Johann Lussange et al. suggest a new way of modelling the <strong>financial market</strong> using MARL. Each trader is given some form of intelligence through statistical models based on <strong>M.P Murray</strong>'s work in <strong>The American statistician volume 48(1)</strong>. Indeed, each artificial trader learns to <strong>forecast</strong> the price of stocks using reinforcement learning. It also learns how to <strong>price</strong> them, using a trading strategy ranging from <strong>chartist</strong> (based on the market's price) to <strong>fundamental</strong> (based on the intrinsic value). Additionally, trader's can be <strong>"endowed with certain traints of behaviour"</strong>based on behavioural economics. 
+             </p>
+             <br>
+             <p>
+                  With their model, Jogann Lussange et al. claim to have achieved <strong>state-of-the-art performance</strong> in price microstructure emulation (price simulation with few agents).
+            </p>
+            <br>
+            <br>
+            <br>
+            <center>
+            <h4>Siqi Liu et al. : cooperative behaviours in 2 vs 2 soccer</h4>
+            <p>
+                <a href="https://arxiv.org/abs/1902.07151" target="_blank">arXiv article</a> -
+                <a href="https://github.com/deepmind/dm_control/tree/master/dm_control/locomotion/soccer?&" target="_blank">Github</a>
+            </p>
+            <br>
+            <figure class="figure">
+                <img src="images/soccer.png" class="figure-img img-fluid rounded" height ="300" width = "561">
+                <figcaption class="figure-caption">Screenshot from the game</figcaption>
+            </figure>            
+            </center>
+            <br>
+            <br>
+            <p>
+                In this article, Siqi Liu et al. tackle competitive games simulation by coding <strong>an AI that plays 2 vs 2 soccer</strong>. <strong>Agents start from scratch with random behaviours</strong> in a simulated environment endowed with physical laws.
+            </p>
+            <br>
+            <p>
+                 Their strategy improves as they start to chase the ball, and eventually they cooperate as soccer players. <strong>Without any prior knowledge</strong>, the algorithm manages to learn how to properly play in order to score against an intelligent opponent.
+            </p>
+            <br>
+            <p>
+                The algorithm's <strong>teamplay</strong> has been tested with a simple exercise where <strong>one player of the blue team is in front of the goal</strong>, and the 2 players of the red team are defending it <strong>next to each other</strong>. Then, another blue player spawns left or right of the first one, and the experience is to check if the first blue player is going to play <strong>selfishly and try to dribble</strong> the red players, or play <strong>cooperatively and pass the ball</strong> to its teammate. At first, the blue player tries to dribble, but later during training, it starts to pass the ball more often, producing the well known <strong>"une - deux"</strong> human move.
+            </p>
+            <br>
+            <br>
+            <br>
+        
+
+        </div>
+    </div>
+</body>
